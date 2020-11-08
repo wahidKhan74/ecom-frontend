@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class UsersService {
 
   constructor(private httpClient : HttpClient) { }
+  private baseUrl ='https://reqres.in/api/users';
 
   private users =[
     { name :"John Smith" , age:28 ,gender :"Male", photo:"john.jpeg"},
@@ -22,7 +23,11 @@ export class UsersService {
   }
 
   public getUserApi(page?:number) {
-    return this.httpClient.get('https://reqres.in/api/users?page='+page);
+    return this.httpClient.get(this.baseUrl+'?page='+page);
+  }
+
+  public addUser(user:any){
+     return this.httpClient.post(this.baseUrl,user);
   }
 
 }

@@ -1,0 +1,40 @@
+<h4>Reactive Form: Example</h4>
+<div class="well well-lg">
+    <form [formGroup]="userForm" (ngSubmit)="submitForm(userForm)" class="form-horizontal" novalidate>
+        <div [hidden]="submitted">
+            <div class="form-group col-sm-6" >
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" formControlName="name" 
+                 placeholder="Required First Name" dir-letter-only>
+                <small *ngIf="hasErrors('name')" class="hep-block" [ngClass]="{'has-error':hasErrors('name')}">
+                    <span *ngIf="name.errors.required"> Name is required.</span>
+                    <span *ngIf="name.errors.minlength"> Name must be at leat 2 character long.</span>
+                    <span *ngIf="name.errors.maxlength"> Name cannot exceed 15 characters.</span>
+                    <span *ngIf="name.errors.letterOnly">{{name.errors.letterOnly}}</span>
+                </small>
+              </div>
+              <div class="form-group col-sm-6" >
+                <label for="job">Job Name</label>
+                <input type="text" class="form-control" id="job" name="job" formControlName="job" 
+                placeholder="Required last Name">
+                <small *ngIf="hasErrors('job')" class="hep-block" [ngClass]="{'has-error':hasErrors('job')}">
+                    <span *ngIf="job.errors.required">Job Name is required.</span>
+                    <span *ngIf="job.errors.minlength">Job Name must be at leat 2 character long.</span>
+                    <span *ngIf="job.errors.maxlength">Job Name cannot exceed 15 characters.</span>
+                </small>
+              </div>
+             
+              <button  class="btn btn-default" (click)="resetForm(userForm)">Reset</button>
+              <button type="submit" class="btn btn-primary" >Submit</button>
+        </div>
+        
+      </form>
+      <div *ngIf="submitted" class="container well well-lg">
+        <label for="">You've submitted Form !</label>
+        <pre>
+            {{ userResponse | json}}
+        </pre>
+        <button type="button" class="btn btn-default" (click)="resetForm(userForm)"> Add new</button>
+      </div>
+
+</div>

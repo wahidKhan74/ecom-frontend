@@ -4,9 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { UsersComponent } from './users/users.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { UsersService } from './users.service';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 const routes:Routes = [
-  { path :"users", component:UsersComponent }
+  { path :"users", component:UsersComponent },
+  { path :"user-create", component:CreateUserComponent },
 ]
 
 @NgModule({
