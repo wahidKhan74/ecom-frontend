@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  constructor() { }
+  constructor(private httpClient : HttpClient) { }
 
   private users =[
     { name :"John Smith" , age:28 ,gender :"Male", photo:"john.jpeg"},
@@ -19,4 +20,9 @@ export class UsersService {
   public getUsers(){
     return this.users;
   }
+
+  public getUserApi(page?:number) {
+    return this.httpClient.get('https://reqres.in/api/users?page='+page);
+  }
+
 }
