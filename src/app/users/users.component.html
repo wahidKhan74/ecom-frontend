@@ -14,7 +14,7 @@
         <th scope="row">{{user.id}}</th>
         <td>{{user.first_name}}</td>
         <td>{{user.last_name}}</td>
-        <td>{{user.email}}</td>
+        <td>{{user.email | convertToSpecialChar :'@'}}</td>
         <td>
             <img src={{user.avatar}} alt="" height="20px" width="20px"></td>
       </tr>

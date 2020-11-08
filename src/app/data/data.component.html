@@ -1,0 +1,32 @@
+<div class="container">
+    <p>LowerCase Text : {{data.str | lowercase}}</p>
+    <p>Uppercase Text : {{data.str | uppercase}}</p>
+</div>
+
+<div class="container">
+    <p>Original Number : {{data.nom }}</p>
+    <p>Number : {{data.nom | number :'1.0-0' }}</p>
+    <p>Number : {{data.nom | number :'1.1-1' }}</p>
+    <p>Number : {{data.nom | number :'1.1-2' }}</p>
+</div>
+
+<div class="container">
+    <p>Original Date : {{data.date }}</p>
+    <p>Date : {{data.date | date }}</p>
+    <p>Date : {{data.date | date :'short' }}</p>
+    <p>Date : {{data.date | date :'medium' }}</p>
+    <p>Date : {{data.date | date :'shortDate' }}</p>
+    <p>Date : {{data.date | date :'dd/MM/yyyy' }}</p>
+</div>
+<div class="container">
+    <p>Original Price : {{data.price }}</p>
+    <p>Price In USD : {{data.price | currency }}</p>
+    <p>Price In INR : {{data.price | currency: 'INR' }}</p>
+    <p>Price In INR : {{data.price | currency: 'CAD' }}</p>
+    <p>Price In INR : {{data.price | currency: 'EUR' }}</p>
+</div>
+
+<div class="container">
+    <p>Original Object : {{data }}</p>
+    <p>JSON Object : {{data | json}}</p>
+</div>

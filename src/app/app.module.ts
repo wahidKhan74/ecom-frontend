@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DataComponent } from './data/data.component';
 
 
 
@@ -13,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     CreateUserComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,
