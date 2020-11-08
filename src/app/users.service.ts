@@ -1,0 +1,22 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UsersService {
+
+  constructor() { }
+
+  private users =[
+    { name :"John Smith" , age:28 ,gender :"Male", photo:"john.jpeg"},
+    { name :"Marry Smith" , age:21 ,gender :"Female", photo:"john.jpeg"},
+    { name :"Kelly Smith" , age:23 ,gender :"Male", photo:"john.jpeg"},
+    { name :"Tony Stark" , age:50 ,gender :"Male", photo:"john.jpeg"},
+    { name :"Will Smith" , age:48 ,gender :"Male", photo:"john.jpeg"},
+    { name :"David Killer" , age:78 ,gender :"Male", photo:"david.jpeg"},
+  ];
+
+  public getUsers(){
+    return this.users;
+  }
+}
